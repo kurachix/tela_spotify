@@ -174,6 +174,37 @@ class SecondPage extends StatelessWidget {
           Container(
             color: Colors.black.withValues(alpha: 0.5),
           ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: SafeArea(
+              minimum: const EdgeInsets.only(bottom: 24.0),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                child: FractionallySizedBox(
+                  widthFactor: 0.92,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF62CD5D),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(56),
+                      ),
+                      padding: const EdgeInsets.symmetric(vertical: 24.0),
+                      elevation: 0,
+                    ),
+                    child: const Text(
+                      'Continue',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
