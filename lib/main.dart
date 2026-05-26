@@ -319,19 +319,43 @@ class BlankPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
-        child: Align(
-          alignment: Alignment.topCenter,
-          child: Padding(
-            padding: EdgeInsets.only(top: 12.0),
-            child: Image(
-              image: AssetImage('spotify_logo.png'),
-              width: 140,
-              fit: BoxFit.contain,
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.only(top: 12.0, left: 12.0, right: 12.0),
+              child: Row(
+                children: [
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.search),
+                    color: Colors.black87,
+                    iconSize: 28,
+                    tooltip: 'Search',
+                  ),
+                  Expanded(
+                    child: Center(
+                      child: Image(
+                        image: AssetImage('spotify_logo.png'),
+                        width: 140,
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.more_vert),
+                    color: Colors.black87,
+                    iconSize: 28,
+                    tooltip: 'Menu',
+                  ),
+                ],
+              ),
             ),
-          ),
+            const Expanded(child: SizedBox()),
+          ],
         ),
       ),
     );
