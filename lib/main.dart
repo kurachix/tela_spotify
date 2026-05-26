@@ -419,40 +419,43 @@ class BlankPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 56),
-            Padding(
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
                   Text(
                     'News',
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 34,
+                      fontSize: 28,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
+                  SizedBox(width: 24),
                   Text(
                     'Video',
                     style: TextStyle(
                       color: Colors.black26,
-                      fontSize: 34,
+                      fontSize: 28,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
+                  SizedBox(width: 24),
                   Text(
                     'Artists',
                     style: TextStyle(
                       color: Colors.black26,
-                      fontSize: 34,
+                      fontSize: 28,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
+                  SizedBox(width: 24),
                   Text(
                     'Podcasts',
                     style: TextStyle(
                       color: Colors.black26,
-                      fontSize: 34,
+                      fontSize: 28,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
