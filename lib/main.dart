@@ -325,12 +325,12 @@ class BlankPage extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.only(top: 12.0, left: 12.0, right: 12.0),
+              padding: const EdgeInsets.only(top: 12.0, left: 12.0, right: 12.0),
               child: Row(
                 children: [
                   IconButton(
                     onPressed: () {},
-                    icon: Icon(Icons.search),
+                    icon: const Icon(Icons.search),
                     color: Colors.black87,
                     iconSize: 28,
                     tooltip: 'Search',
@@ -338,7 +338,7 @@ class BlankPage extends StatelessWidget {
                   Expanded(
                     child: Center(
                       child: Image(
-                        image: AssetImage('spotify_logo.png'),
+                        image: const AssetImage('spotify_logo.png'),
                         width: 140,
                         fit: BoxFit.contain,
                       ),
@@ -346,10 +346,73 @@ class BlankPage extends StatelessWidget {
                   ),
                   IconButton(
                     onPressed: () {},
-                    icon: Icon(Icons.more_vert),
+                    icon: const Icon(Icons.more_vert),
                     color: Colors.black87,
                     iconSize: 28,
                     tooltip: 'Menu',
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 28),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  Container(
+                    width: double.infinity,
+                    constraints: const BoxConstraints(minHeight: 180),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF62CD5D),
+                      borderRadius: BorderRadius.circular(36),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(24, 20, 130, 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: const [
+                          Text(
+                            'New Album',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            'Happier Than Ever',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 28,
+                              fontWeight: FontWeight.w700,
+                              height: 1.05,
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            'Billie Elish',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    right: -10,
+                    bottom: -12,
+                    child: Image.asset(
+                      'elish.png',
+                      width: 220,
+                      fit: BoxFit.contain,
+                    ),
                   ),
                 ],
               ),
