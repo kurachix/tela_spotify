@@ -559,10 +559,197 @@ class BlankPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 24),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Text(
+                    'Playlist',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 28,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  Text(
+                    'See More',
+                    style: TextStyle(
+                      color: Colors.black54,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 14),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              child: Column(
+                children: const [
+                  _PlaylistRow(
+                    title: 'As It Was',
+                    artist: 'Harry Styles',
+                    duration: '5:33',
+                  ),
+                  SizedBox(height: 20),
+                  _PlaylistRow(
+                    title: 'God Did',
+                    artist: 'DJ Khaled',
+                    duration: '3:43',
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 96),
           ],
         ),
         ),
       ),
+      bottomNavigationBar: SafeArea(
+        top: false,
+        child: Container(
+          height: 82,
+          decoration: const BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(28),
+              topRight: Radius.circular(28),
+            ),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              _BottomNavIcon(
+                icon: Icons.home,
+                selected: true,
+              ),
+              _BottomNavIcon(
+                icon: Icons.explore_outlined,
+              ),
+              _BottomNavIcon(
+                icon: Icons.favorite_border,
+              ),
+              _BottomNavIcon(
+                icon: Icons.person_outline,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _BottomNavIcon extends StatelessWidget {
+  const _BottomNavIcon({
+    required this.icon,
+    this.selected = false,
+  });
+
+  final IconData icon;
+  final bool selected;
+
+  @override
+  Widget build(BuildContext context) {
+    if (selected) {
+      return Container(
+        width: 44,
+        height: 44,
+        decoration: const BoxDecoration(
+          color: Color(0xFF62CD5D),
+          shape: BoxShape.circle,
+        ),
+        child: Icon(
+          icon,
+          color: Colors.white,
+          size: 24,
+        ),
+      );
+    }
+
+    return Icon(
+      icon,
+      color: Colors.black38,
+      size: 32,
+    );
+  }
+}
+
+class _PlaylistRow extends StatelessWidget {
+  const _PlaylistRow({
+    required this.title,
+    required this.artist,
+    required this.duration,
+  });
+
+  final String title;
+  final String artist;
+  final String duration;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Container(
+          width: 58,
+          height: 58,
+          decoration: const BoxDecoration(
+            color: Color(0xFFE8E8E8),
+            shape: BoxShape.circle,
+          ),
+          child: const Icon(
+            Icons.play_arrow,
+            color: Colors.black54,
+            size: 30,
+          ),
+        ),
+        const SizedBox(width: 18),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontSize: 22,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              const SizedBox(height: 8),
+              Text(
+                artist,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(
+                  color: Colors.black54,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(width: 14),
+        Text(
+          duration,
+          style: const TextStyle(
+            color: Colors.black87,
+            fontSize: 18,
+            fontWeight: FontWeight.w400,
+          ),
+        ),
+        const SizedBox(width: 14),
+        const Icon(
+          Icons.favorite_border,
+          color: Colors.black38,
+          size: 30,
+        ),
+      ],
     );
   }
 }
