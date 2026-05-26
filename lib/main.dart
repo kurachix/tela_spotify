@@ -406,12 +406,53 @@ class BlankPage extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    right: -10,
-                    bottom: -12,
+                    right: -34,
+                    bottom: -22,
                     child: Image.asset(
                       'elish.png',
-                      width: 220,
+                      width: 290,
                       fit: BoxFit.contain,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 56),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Text(
+                    'News',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 34,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  Text(
+                    'Video',
+                    style: TextStyle(
+                      color: Colors.black26,
+                      fontSize: 34,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  Text(
+                    'Artists',
+                    style: TextStyle(
+                      color: Colors.black26,
+                      fontSize: 34,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  Text(
+                    'Podcasts',
+                    style: TextStyle(
+                      color: Colors.black26,
+                      fontSize: 34,
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
                 ],
