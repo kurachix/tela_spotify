@@ -60,6 +60,7 @@ flutter:
   assets:
     - spotify_logo.png
     - ariana_grande.jpg
+    - dua_lipa.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
