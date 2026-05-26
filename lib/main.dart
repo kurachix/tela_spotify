@@ -72,6 +72,19 @@ class HomePage extends StatelessWidget {
           Container(
             color: Colors.black.withValues(alpha: 0.6),
           ),
+          Align(
+            alignment: Alignment.topCenter,
+            child: SafeArea(
+              child: Padding(
+                padding: EdgeInsets.only(top: 16.0),
+                child: Image.asset(
+                  'spotify_logo.png',
+                  width: 280,
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
