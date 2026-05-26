@@ -280,7 +280,13 @@ class SecondPage extends StatelessWidget {
                 child: FractionallySizedBox(
                   widthFactor: 0.92,
                   child: ElevatedButton(
-                    onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute<void>(
+                            builder: (context) => const BlankPage(),
+                          ),
+                        );
+                      },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF62CD5D),
                       shape: RoundedRectangleBorder(
@@ -303,6 +309,30 @@ class SecondPage extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class BlankPage extends StatelessWidget {
+  const BlankPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Align(
+          alignment: Alignment.topCenter,
+          child: Padding(
+            padding: EdgeInsets.only(top: 12.0),
+            child: Image(
+              image: AssetImage('spotify_logo.png'),
+              width: 140,
+              fit: BoxFit.contain,
+            ),
+          ),
+        ),
       ),
     );
   }
