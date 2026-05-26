@@ -66,21 +66,11 @@ class HomePage extends StatelessWidget {
         fit: StackFit.expand,
         children: [
           Image.asset(
-            'ariana_grande.png',
+            'ariana_grande.jpg',
             fit: BoxFit.cover,
           ),
           Container(
             color: Colors.black.withValues(alpha: 0.6),
-          ),
-          const Center(
-            child: Text(
-              'Próxima página',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w600,
-                color: Colors.white,
-              ),
-            ),
           ),
         ],
       ),
