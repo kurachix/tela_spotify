@@ -175,6 +175,19 @@ class SecondPage extends StatelessWidget {
             color: Colors.black.withValues(alpha: 0.75),
           ),
           Align(
+            alignment: Alignment.topCenter,
+            child: SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.only(top: 16.0),
+                child: Image.asset(
+                  'spotify_logo.png',
+                  width: 280,
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ),
+          ),
+          Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
               padding: const EdgeInsets.only(bottom: 220.0, left: 24.0, right: 24.0),
