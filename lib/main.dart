@@ -172,7 +172,91 @@ class SecondPage extends StatelessWidget {
             fit: BoxFit.cover,
           ),
           Container(
-            color: Colors.black.withValues(alpha: 0.5),
+            color: Colors.black.withValues(alpha: 0.75),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 220.0, left: 24.0, right: 24.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Text(
+                    'Choose Mode',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 28,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Column(
+                          children: [
+                            Container(
+                              width: 92,
+                              height: 92,
+                              decoration: BoxDecoration(
+                                color: Colors.white24,
+                                shape: BoxShape.circle,
+                              ),
+                              child: const Center(
+                                child: Icon(
+                                  Icons.nightlight_round,
+                                  color: Colors.white,
+                                  size: 36,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 12),
+                            const Text(
+                              'Dark Mode',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(width: 24),
+                      Expanded(
+                        child: Column(
+                          children: [
+                            Container(
+                              width: 92,
+                              height: 92,
+                              decoration: BoxDecoration(
+                                color: Colors.white24,
+                                shape: BoxShape.circle,
+                              ),
+                              child: const Center(
+                                child: Icon(
+                                  Icons.wb_sunny,
+                                  color: Colors.white,
+                                  size: 36,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 12),
+                            const Text(
+                              'Light Mode',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
           ),
           Align(
             alignment: Alignment.bottomCenter,
