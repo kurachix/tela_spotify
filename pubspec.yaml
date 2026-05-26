@@ -62,6 +62,9 @@ flutter:
     - ariana_grande.jpg
     - dua_lipa.png
     - elish.png
+    - msc1.jpg
+    - msc2.jpg
+    - msc3.jpg
 
   # To add assets to your application, add an assets section, like this:
   # assets:

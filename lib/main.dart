@@ -322,8 +322,9 @@ class BlankPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
-        child: Column(
-          children: [
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
             Padding(
               padding: const EdgeInsets.only(top: 12.0, left: 12.0, right: 12.0),
               child: Row(
@@ -458,8 +459,105 @@ class BlankPage extends StatelessWidget {
                 ],
               ),
             ),
-            const Expanded(child: SizedBox()),
+            const SizedBox(height: 28),
+            SizedBox(
+              height: 295,
+              child: ListView.separated(
+                padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                scrollDirection: Axis.horizontal,
+                itemCount: 3,
+                separatorBuilder: (context, index) => const SizedBox(width: 18),
+                itemBuilder: (context, index) {
+                  final carouselItems = [
+                    (
+                      image: 'msc1.jpg',
+                      title: 'Bad Guy',
+                      artist: 'Billie Eilish',
+                    ),
+                    (
+                      image: 'msc2.jpg',
+                      title: 'Scorpion',
+                      artist: 'Drake',
+                    ),
+                    (
+                      image: 'msc3.jpg',
+                      title: 'WHEN WE ALL FALL ASLEEP, WHERE DO WE GO??',
+                      artist: 'Billie Eilish',
+                    ),
+                  ];
+                  final item = carouselItems[index];
+
+                  return SizedBox(
+                    width: 190,
+                    height: 275,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Stack(
+                          clipBehavior: Clip.none,
+                          children: [
+                            Container(
+                              height: 150,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(28),
+                                image: DecorationImage(
+                                  image: AssetImage(item.image),
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              right: 10,
+                              bottom: -14,
+                              child: Container(
+                                width: 42,
+                                height: 42,
+                                decoration: const BoxDecoration(
+                                  color: Colors.white,
+                                  shape: BoxShape.circle,
+                                ),
+                                child: const Icon(
+                                  Icons.play_arrow,
+                                  color: Colors.black54,
+                                  size: 28,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 20),
+                        Text(
+                          item.title,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700,
+                            height: 1.1,
+                          ),
+                        ),
+                        const SizedBox(height: 6),
+                        Text(
+                          item.artist,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(
+                            color: Colors.black54,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ),
+            const SizedBox(height: 24),
           ],
+        ),
         ),
       ),
     );
